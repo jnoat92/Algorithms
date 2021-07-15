@@ -1,0 +1,266 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft FrontPage 6.0">
+<TITLE>DISTRIBUCIÓN DE INVERSIONES</TITLE>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="file:///C:/Archivos%20de%20programa/Microsoft%20Office/OFFICE11/fpclass/animate.js">
+</script>
+</HEAD>
+<BODY background="../NOTEBOOK.JPG" onload="dynAnimation()" language="Javascript1.2">
+
+<blockquote>
+	<p align="center" dynamicanimation="fpAnimzoomOutFP1" id="fpAnimzoomOutFP1" style="position: relative !important; visibility: hidden" language="Javascript1.2">
+	<img border="0" src="../ENT_CON_INF.jpg" width="143" height="96"></p>
+	<p align="center"><u><b><font face="Verdana">
+	<font class="desthdr" color="#000080" size="5"><span lang="es">Counting 
+	Change</span></font></font></b></u></p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify"><u><b>
+	<font face="Verdana" size="2">Counting Change Problem<span lang="es">a</span>:</font></b></u></p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<font face="Verdana" size="2"><u><b>Entrada</b></u>: <span lang="es">Una
+	</span>list<span lang="es">a</span> <span lang="es">de</span> denomina<span lang="es">ciones</span>
+	<span lang="es">y </span>N <span lang="es">valores para ser cambiados con 
+	esas denominaciones</span><br>
+	<u><b>Salida</b></u>: Num<span lang="es">ero de N formas de cambiar a N</span></font></p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+	Supo<span lang="es">nga que usted tiene monedas de </span>1 cent<span lang="es">avo</span>, 
+	5 cent<span lang="es">avos</span> <span lang="es">y</span> 10 cent<span lang="es">avos</span>.
+	<span lang="es">Usted se pregunta como puede pagar con </span>16 cent<span lang="es">avo</span>s,
+	<span lang="es">por consiguiente usted tiene que dar </span>1
+	<span lang="es">de un</span> cent<span lang="es">avo</span>, 1
+	<span lang="es">de cinco</span> cent<span lang="es">avo</span>s, and 1
+	<span lang="es">de diez </span>&nbsp;centavos. <span lang="es">El algoritmo
+	</span>Counting Change <span lang="es">puede ser usado para determinar como
+	</span>&nbsp;<span lang="es">gran cantidad de formas usted puede usar para pagar 
+	con una cierta cantidad de dinero</span>.</font></p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+	<span lang="es">El número de formas de pagar cantidades de cambios </span>A 
+	us<span lang="es">a</span>n<span lang="es">do</span> N <span lang="es">tipos</span>
+	<span lang="es">de monedas es igual a</span>:</font></p>
+	<ol style="font-size: 10pt; font-family: Verdana">
+		<li>
+		<p style="margin-left: 10px; margin-right: 10px" align="justify">
+		<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+		<span lang="es">El numero de formas para cambiar la cantidad </span>A
+		<span lang="es">usando todas pera el primer tipo de monedas</span>, +</font></li>
+		<li>
+		<p style="margin-left: 10px; margin-right: 10px" align="justify">
+		<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+		<span lang="es">El número de formas de&nbsp; cambiar la cantidad </span>A-D 
+		us<span lang="es">ando todos los N tipos de monedas</span>,
+		<span lang="es">donde</span> D <span lang="es">e</span>s <span lang="es">
+		la de</span>nomina<span lang="es">ción del primer tipo de moneda</span>.</font></li>
+	</ol>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+	<span lang="es">Un árbol recursivo el&nbsp; </span>proces<span lang="es">o</span>
+	<span lang="es">&nbsp;gradualmente reduce el valor de A</span>, <span lang="es">
+	entonces usando esta regla</span>, <span lang="es">nosotros podemos </span>
+	determin<span lang="es">ar</span> <span lang="es">cuántas formas de cambiar 
+	las monedas</span>.</font></p>
+	<ol style="font-size: 10pt; font-family: Verdana">
+		<li>
+		<p style="margin-left: 10px; margin-right: 10px" align="justify">
+		<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+		<span lang="es">Si</span> <span lang="es">&nbsp;</span>A<span lang="es"> e</span>s
+		<span lang="es">exactamente</span> 0, <span lang="es">nosotros podemos 
+		contar que hay una forma de cambio</span>.</font></li>
+		<li>
+		<p style="margin-left: 10px; margin-right: 10px" align="justify">
+		<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+		<span lang="es">Si&nbsp; </span>A <span lang="es">e</span>s <span lang="es">
+		menor que </span>0, <span lang="es">nosotros podemos contar que hay
+		</span>0 <span lang="es">formas de cambios</span>.</font></li>
+		<li>
+		<p style="margin-left: 10px; margin-right: 10px" align="justify">
+		<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+		<span lang="es">Si</span> N <span lang="es">tipos de monedas e</span>s 
+		0, </font>
+		<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+		<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+		<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+		<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+		<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+		<span lang="es">nosotros podemos contar que hay </span>0 <span lang="es">
+		formas de cambios</span>.</font></li>
+	</ol>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<font class="desthdr" style="font-size: 10pt" face="Verdana" color="#000000">
+	<span lang="es">Y finalmente</span>, <span lang="es">esta es la solución 
+	Dinámica para </span>Counting Change problem<span lang="es">a</span> (in C):</font></p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p><font color="#800000"><b>
+	<span lang="es">Implementación en C</span></b></font></p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<font style="font-size: 10pt" face="Courier New">#include &lt;stdio.h&gt;<br>
+	#define MAXTOTAL 10000<br>
+	<br>
+	// <span lang="es">Esto puede ser muy grande</span>... <span lang="es">
+	grande grande</span> <span lang="es">puede ser y</span><br>
+	// <span lang="es">usted puede necesitar usar enteros muy grandes</span><br>
+	long long nway[MAXTOTAL+1];</font></p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<font style="font-size: 10pt" face="Courier New">// <span lang="es">Asuma 
+	que tienes 5 tipos diferentes de dinero</span><br>
+	int coin[5] = { 50,25,10,5,1 };<br>
+	<br>
+	void main() {<br>
+	&nbsp; int i,j,n,v,c;<br>
+	&nbsp; scanf(&quot;%d&quot;,&amp;n);<br>
+	&nbsp; v = 5;<br>
+	&nbsp; nway[0] = 1;<br>
+	&nbsp; for (i=0; i&lt;v; i++) {<br>
+	&nbsp;&nbsp;&nbsp; c = coin[i];<br>
+	&nbsp;&nbsp;&nbsp; for (j=c; j&lt;=n; j++)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nway[j] += nway[j-c];<br>
+	&nbsp; }<br>
+	&nbsp; printf(&quot;%lld\n&quot;,nway[n]);<br>
+	}</font></p>
+	<MAX; printf(?%d-?,Non_DP(z)); much 
+faster than first printf(?%d-?,DP_Top_Down(z)); this normally will be the 
+fastest * memo[z]="0;" for (z="0;" z<MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); 
+printf(?\n\n?); } < p>
+	<MAX; printf(?%d-?,Non_DP(z)); much faster than first 
+printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest * memo[z]="0;" 
+for (z="0;" z<MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < 
+p>
+	<MAX; printf(?%d-?,Non_DP(z)); much faster than first 
+printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest * memo[z]="0;" 
+for (z="0;" z<MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < 
+p>
+	<MAX; printf(?%d-?,Non_DP(z)); much faster than first 
+printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest * memo[z]="0;" 
+for (z="0;" z<MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < 
+p>
+	<MAX; printf(?%d-?,Non_DP(z)); much faster than first 
+printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest * memo[z]="0;" 
+for (z="0;" z<MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < 
+p>
+	<MAX; printf(?%d-?,Non_DP(z)); much faster than first 
+printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest * memo[z]="0;" 
+for (z="0;" z<MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < 
+p>
+	<MAX; printf(?%d-?,Non_DP(z)); much faster than first 
+printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest * memo[z]="0;" 
+for (z="0;" z<MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p><font color="#800000"><b>
+	<span lang="es">Implementación en Pascal</span></b></font></p>
+	<p style="margin-left: 10px; margin-right: 10px" align="justify">
+	<font face="Courier New" size="2">const<br>
+	<span lang="es">&nbsp; </span>coin : array [1..4] of<span lang="es"> </span>
+	integer = (1, 5, 10, 25);<br>
+	var<br>
+	<span lang="es">&nbsp; </span>nway : array [0..100<span lang="es">1</span>] of 
+	integer;<br>
+	<br>
+	procedure init;<br>
+	var<br>
+	<span lang="es">&nbsp; </span>n, i, j : integer;<br>
+	<span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>c : integer;<br>
+	begin<br>
+	<span lang="es">&nbsp;&nbsp; </span>fillchar (nway, sizeof(nway), 0);<br>
+	<span lang="es">&nbsp;&nbsp; </span>nway[0] := 1;</font><span lang="es"><font face="Courier New" size="2">&nbsp;
+	</font></span><font face="Courier New" size="2"><br>
+	<span lang="es">&nbsp;&nbsp; n </span>:= <span lang="es">11</span><br>
+	</font>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<MAX; 
+printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z)); 
+this normally will be the fastest * memo[z]="0;" for (z="0;" z<MAX; z++) 
+printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } < p>
+	<font face="Courier New" size="2"><span lang="es">&nbsp;&nbsp; </span>for i := 0 to 4 
+	do<br>
+	<span lang="es">&nbsp;&nbsp; </span>begin<br>
+	<span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>c := coin[i];<br>
+	<span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for j := c to n do<br>
+	<span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>nway[j] := nway[j] + nway[j<span lang="es">
+	</span>-<span lang="es"> </span>c];<br>
+	<span lang="es">&nbsp;&nbsp; </span>end;<br>
+	<span lang="es">&nbsp;&nbsp; </span>Writeln (nway[n] div 2);<br>
+	end;</font></p>
+</blockquote>
+
+</BODY>
+</HTML>

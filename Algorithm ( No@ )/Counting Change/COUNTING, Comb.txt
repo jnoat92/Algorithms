@@ -1,0 +1,195 @@
+
+"Principios Fundamentales de Conteo"
+
+
+>> Nota aclaratoria
+
+  Para la realizaci¢n de este documento se utiliz¢ como bibliograf¡a el
+libro "Discrete and Combinatorial Mathematics" de R.P.Grimaldi. Utilizando
+el primer cap¡tulo del libro "Fundamentals Principles of Counting". Con
+objetivo de ser fiel a la bibliograf¡a, se utiliz¢ en este material el
+mismo lenguaje que en el original, por eso es que el concepto de
+Variaciones empleado por otras bibliograf¡as aparece incluido como
+Permutaciones, y otras diferencias por el estilo.
+
+
+>> Indice:
+
+  - Regla de la suma y del producto.
+  - Permutaciones y Permutaciones con repeticiones
+  - Combinaciones
+  - El Teorema del Binomio
+  - Combinaciones con repeticiones
+
+
+>> Regla de la suma
+
+Si una primera tarea puede ser hecha de m formas, y una segunda tarea
+puede ser hecha de n formas, y no puede ser hechas ambas tareas
+simultaneamente; entonces hacer una de las dos puede ser hecho de m+n
+maneras.
+
+
+>> Regla del producto
+
+Si un procedimiento puede ser dividido en dos estados, y para el primer
+estado hay m posibles salidas, y para cada salida de estas hay n posibles
+salidas; entonces el procedimiento total (haciendo el 1er estado y luego el
+2do) puede ser ejecutado en m*n maneras.
+
+
+>> Permutaciones
+
+Antes de adentrarnos en algo m s serio, primero definamos el factorial de
+un n£mero n (n!) como el producto de todos los n£meros naturales hasta el
+n.      n! =  1         si n=0
+              n*(n-1)!  si n > 0
+
+El n£mero de permutaciones de tama¤o r, donde 0<=r<=n, de una colecci¢n de
+n objetos es P(n,r) = n!/(n-r)!
+
+Supongamos que tenemos una pelota de futbol(f), una de beisbol(b), una de
+tennis(t), una de golf(g), y una de ping-pong(p). De estas pelotas vamos a
+tomar una en la mano derecha y otra en la izquierda. ¨De cu ntas formas
+podemos tomar las pelotas? Ok, podemos tomarlas de las siguientes maneras:
+
+fb  ft  fg  fp                Como ven (porque deben haberlo visto) en
+bf  bt  bg  bp                la mano derecha podemos tomar cualquiera
+tf  tb  tg  tp                de las 5 pelotas, y en la mano izquierda
+gf  gb  gt  gp                cualquiera de las 4 que quedan, entonces
+pf  pb  pt  pg                por la ley del producto puedo tomar las
+                              pelotas de 5*4 formas.
+
+EN GENERAL: El n£mero de permutaciones de tama¤o r, 0<=r<=n, de una
+colecci¢n de n objetos, es P(n,r) = n!/(n-r)!
+
+Demostraci¢n. Tenemos n objetos y r lugares para ser ubicados, en el 1er
+lugar podemos ubicar cualquiera de los n objetos; en el 2do, cualquiera de
+los n-1 restantes; en el 3ro, cualquiera de los n-2 que quedan; ... ; en el
+r-‚simo lugar, cualquiera de los n-r+1 restantes; y por la ley del producto
+existen n*(n-1)*(n-2)*...*(n-r+1) = n!/(n-r)! formas de ser ubicados los
+objetos.
+
+
+>> Permutaciones con repeticiones
+
+Supongamos que tenemos 3 letras (A) de un tipo, 2 de otro (B), y 5 de otro
+(C); y queremos utilizar todas estas letras para formar palabras, ¨cu ntas
+palabras podemos formar?
+
+El gran problema radica en que hay letras que son iguales entre s¡. Pero
+si fueran 10 letras diferentes habr¡an 10! palabras que podr¡amos formar.
+Hagamos entonces diferencia entre cada una de las letras.
+
+A1 A2 A3 B1 B2 C1 C2 C3 C4 C5
+
+tendr¡amos 10! palabras, pero la palabra A1 A2 A3 B1 B2 C1 C2 C3 C4 C5 es
+igual a la palabra A1 A2 A3 A4 A5 B2 B1 C2 C4 C1 C5 C3; y como hay 3 As,
+2 Bs, y 5 Cs; entonces cada palabra aparece 3!*2!*5! veces, por lo tanto
+dividimos 10!/(3!*2!*5!) y obtenemos la soluci¢n para nuestro problema.
+
+EN GENERAL: Si hay n bojetos con n1 objetos del 1er tipo, n2 del 2do tipo,
+..., y nr del r-‚simo tipo, donde n1+n2+...+nr=n, entonces hay
+n!/(n1!n2!..nr!) distribuciones lineares de los n objetos. (Objetos del
+mismo tipo son iguales).
+
+
+>> Combinaciones
+
+Supongamos que en un aula de 29 alumnos queremos elegir el "Presidente de
+la FEEM", el "Jefe de limpieza", y el "Responsable del televisor"; para
+saber de cuantas formas lo podemos hacer aplicamos el c lculo de las
+Permutaciones visto ya anteriormente. Existen 29!/(29-3)! formas de hacer
+esta elecci¢n. Esta f¢rmula se puede aplicar debido a que de importa a
+que alumno seleccionamos primero, no es lo mismo Ana, Basilio, y Cecilia,
+que Cecilia, Ana, y Basilio. Pero supongamos que vamos a elegir 3 alumnos
+para cargar el televisor de la direcci¢n al aula (3 alumnos, antes eran 2
+pero ahora los televisores son m s grandes). En este caso nos da lo mismo
+Ana, Basilio, y Cecilia, que Cecilia, Ana, y Basilio, que Basilio, Cecilia,
+y Ana, etc. Por lo tanto si son 3 estudiantes existen 3! formas iguales,
+por lo tanto el total de formas es 29! / ((29-3)!*3!).
+
+EN GENERAL: Escoger r objetos de n distintos objetos cuando no importa el
+orden es  C(n,r) = P(n,r)/r! = n! / (n-r)!r!
+
+
+>> El Teorema del Binomio
+
+Si "x" y "y" son variables y n es un entero positivo, entonces
+(x+y)^n = C(n,0)*x^0*y^n +
+          C(n,1)*x^1*y^(n-1) +
+          C(n,2)*x^2*y^(n-2) +
+          . . . . . . . . . .  +
+          C(n,n)*x^n*y^0
+
+        = sumatoria de  C(n,k) * x^k * y^(n-k)  para k = 0 hasta n
+
+                         1er     2do     3er    ...   n-‚simo factor
+Demostraci¢n. (x+y)^n = (x+y) * (x+y) * (x+y) * ... * (x+y) n veces.
+El resultado va a tener n+1 t‚rminos que son x^n*y^0, x^(n-1)*y^1,
+x^(n-2)*y^2 ... etc. Ahora calculemos el coeficiente del t‚rmino
+x^k * y^(n-k), este t‚rmino significa que hemos tomado la "x" de k factores
+y de los restantes n-k factores hemos tomado la "y". ¨De cu ntas formas
+podemos tomar k "x" de n posible? Pu‚s f cil C(n,k), por lo tanto, el
+coeficiente del t‚rmino x^k * y^(n-k) es C(n,k), como k puede tomar valores
+desde 0 hasta n (recordar que hay n+1 t‚rminos) entonces se deriva la
+f¢rmula antes expuesta.
+
+Consejo : si no entendi¢, pi‚nselo otra vez.
+
+Consejo : si a£n no entiende, olv¡delo y r¡ase con el siguiente chiste
+¨Por qu‚ las mujeres no pueden contar hasta 70? R/Porque cuando llegan
+al 69 se les llena la boca.
+
+Consejo : si no entiende el chiste, mejor entienda el teorema.
+
+Del Teorema del Binomio podemos llegar a los Colorarios siguientes:
+  a)  C(n,0) + C(n,1) + C(n,2) + ... + C(n,n) = 2^n         = (1+1)^n
+  b)  C(n,0) - C(n,1) + C(n,2) - ... + (-1)^n*C(n,n) = 0    = (1-1)^n
+
+
+>> Combinaciones con repeticiones
+
+Supongamos que tenemos 3 tipos de dulces: bombones, helados, y pastelitos
+(si tiene hambre le aconsejo que no lea esto); y podemos elegir 5 platos;
+es decir; 3 bombones, 1 helado, y 1 pastel; o 2 bombones, 0 helados, y 3
+pasteles (Yo eligir¡a 5 helados pero bueno). ¨De cu ntas formas se puede
+hacer el pedido? Pu‚ m£ f sil, supongamos que tenemos 5 cruces y 3-1
+barras.
+
+ x x x x x | |
+
+si consideramos que las cruces que est n antes de la 1ra barra con los
+bombones, las cruces entre la 1ra y la 2da barra son los helados, y las
+cruces despu‚s de la 2da barra son los pastelitos, entonces para cada
+distribuci¢n de cruces y barras tenemos un pedido de dulces. Por lo tanto
+existen C(3+5-1,5) pedidos de dulces.
+
+EN GENERAL: El n£mero de combinaciones de n objetos tomados r al mismo
+tiempo, con repeticiones, es C(n+r-1,r).
+
+
+y se acab¢.
+
+
+Dudas y sugerencias pueden se enviadas a la dirrecci¢n de correo :
+
+qwertyuiopasdfghjklzxcvbnm1234567890@yahoo.com
+
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Daniel Rodr¡guez S nchez                                         1-dic-2004
+IPVCE: "Ernesto Guevara"             d¡a mundial de la lucha contra el SIDA
+
+                               _______
+                              /  ___  \
+                             (  (   )  )
+                              \  \ /  /
+                               \  /  /
+                                \/  /
+                                /  /\
+                               /  ^  \
+                              /  / \  \
+                              \_/   \_/
+
+

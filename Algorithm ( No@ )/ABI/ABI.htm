@@ -1,0 +1,257 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Cumulative frecuency tables</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="594" border="0" cellspacing="1" cellpadding="0">
+  <tr> 
+    <td width="136"><img src="images/logo02Kor.gif" width="130" height="124"></td>
+    <td width="455" align="center" valign="middle"><strong>Preselecci&oacute;n 
+      Nacional de Inform&aacute;tica a la 14 IOI</strong><br> <strong><em>Cuba 
+      2002</em></strong></td>
+  </tr>
+  <tr align="center"> 
+    <td height="39" colspan="2"><font size="5"><b><u>Cumulative Frequency Tables</u></b></font></td>
+  </tr>
+  <tr> 
+    <td colspan="2"><font size="-1">Tema por: Ronny L&oacute;pez Trujillo, IPVCE 
+      &quot;Ernesto Guevara&quot;, Villa Clara</font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+
+<p>Para comenzar consideremos el siguiente ejemplo:</p>
+
+<p>Suponga que tenemos una tabla de una dimensión (1-D tamaño
+N) donde se almacenan ciertos valores.</p>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+  <tr>
+    <td><table width="210" border="0" cellpadding="0" cellspacing="1"
+hspace="9">
+        <tr align="center" valign="middle" bgcolor="#FFFFFF"> 
+          <td width="9%">1 </td>
+          <td width="9%">2</td>
+          <td width="9%">3</td>
+          <td width="9%">4</td>
+          <td width="9%">5</td>
+          <td width="9%">6</td>
+          <td width="9%">7</td>
+          <td width="9%">8</td>
+          <td width="9%">9</td>
+          <td width="15%">10</td>
+        </tr>
+        <tr align="center" valign="middle" bgcolor="#FFFFFF"> 
+          <td width="9%">1</td>
+          <td width="9%">2</td>
+          <td width="9%">1</td>
+          <td width="9%">4</td>
+          <td width="9%">6</td>
+          <td width="9%">7</td>
+          <td width="9%">2</td>
+          <td width="9%">3</td>
+          <td width="9%">2</td>
+          <td width="15%">1</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<p>Si los valores en la tabla son almacenados como tal, una
+actualización requiere O(1) operaciones y para calcular la suma
+de cierto intervalo requiere O(N).</p>
+
+<p>El cálculo de la suma de los valores en cierto intervalo
+[X,Y] puede ser también determinado calculando la suma
+acumulativa S = [1,X-1] y M = [1,Y] y la respuesta A = M- S. La
+suma S y M pueden ser almacenadas en la tabla, (la celda con
+índice I en la tabla almacena la suma del intervalo [1,I]) en la
+cual el caso de calcular la suma de cierto intervalo puede ser
+resuelto en O(1). Mantener la suma acumulativa almacenada
+requiere entonces O(N) operaciones para la actualización de los
+valores.</p>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+  <tr> 
+    <td><table border="0" cellpadding="0" cellspacing="1" width="264"
+hspace="9">
+        <tr align="center" valign="middle" bgcolor="#FFFFFF"> 
+          <td width="8%">1</td>
+          <td width="8%">2</td>
+          <td width="8%">3</td>
+          <td width="8%">4</td>
+          <td width="12%">5</td>
+          <td width="12%">6</td>
+          <td width="12%">7</td>
+          <td width="12%">8</td>
+          <td width="12%">9</td>
+          <td width="12%">10</td>
+        </tr>
+        <tr align="center" valign="middle" bgcolor="#FFFFFF"> 
+          <td width="8%">1</td>
+          <td width="8%">3</td>
+          <td width="8%">4</td>
+          <td width="8%">8</td>
+          <td width="12%">14</td>
+          <td width="12%">16</td>
+          <td width="12%">18</td>
+          <td width="12%">21</td>
+          <td width="12%">23</td>
+          <td width="12%">24</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<p>Un árbol binario indexado (ABI), es una estructura de datos
+en la cual el cálculo de la suma acumulativa y la actualización
+pueden ser hechos en O(log N) y solo utilizar el mismo espacio de
+almacenamiento (las tablas anteriores). En el árbol los índices
+están entre 1..N y cada celda con índice I contiene la suma de
+un intervalo [I-2<sup>K</sup>+1, I] donde K es el número de
+ceros a la derecha en la representación binaria del índice de
+la celda (el número 2<sup>K</sup> es llamado en en la
+Bibliografía 'the lowest 1-bit'). De tal forma, la suma de un
+intervalo puede ser computada con 2 O(log N) operaciones.</p>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+  <tr> 
+    <td><table border="0" cellpadding="0" cellspacing="1" width="604">
+        <tr align="center" valign="middle" bgcolor="#FFFFFF"> 
+          <td width="8%">1</td>
+          <td width="8%">2</td>
+          <td width="8%">3</td>
+          <td width="8%">4</td>
+          <td width="8%">5</td>
+          <td width="8%">6</td>
+          <td width="8%">7</td>
+          <td width="8%">8</td>
+          <td width="8%">9</td>
+          <td width="10%">10</td>
+          <td width="15%">Índice</td>
+        </tr>
+        <tr align="center" valign="middle" bgcolor="#FFFFFF"> 
+          <td width="8%">[1,1]</td>
+          <td width="8%">[1,2]</td>
+          <td width="8%">[3,3]</td>
+          <td width="8%">[1,4]</td>
+          <td width="8%">[5,5]</td>
+          <td width="8%">[5,6]</td>
+          <td width="8%">[7,7]</td>
+          <td width="8%">[1,8]</td>
+          <td width="8%">[9,9]</td>
+          <td width="10%">[9,10]</td>
+          <td width="15%">Intervalo </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<p><img src="file:///H|/USERS/hERCLINe/TAU/CONC/conc1/INV/ABI/Image1.gif" width="440" height="260"></p>
+
+<p><b>Fig</b>. Representación de un árbol binario indexado
+unidimensional. Con líneas negras se representa la estructura de
+una actualización y con líneas discontinuas representa el
+camino para determinar la suma del intervalo [1,7]. Solo la tabla
+de abajo debe ser almacenada. </p>
+
+<ul>
+    <li><b>Actualizaciones en ABI.</b></li>
+</ul>
+
+<p>Como habíamos dicho, la celda con índice I en la tabla
+contiene la suma acumulativa del intervalo [I-2<sup>K</sup>+1,
+I]. Por lo tanto, si es necesario actualizar un elemento con
+índice J, deben actualizarse todas las celdas en la tabla que
+almacenen la suma de un intervalo en el cual J está incluido. El
+índice de la próxima celda a ser actualizada puede obtenerse
+adicionando al valor del índice actual 2<sup>K</sup> (K es el
+número de ceros a la derecha en la representación binaria del
+índice). Esto puede ser hecho en O(log N).</p>
+
+<ul>
+    <li><b>Cálculo de la suma de un intervalo en el ABI.</b></li>
+</ul>
+
+<p>Para calcular la suma de un intervalo [X,Y] está&nbsp; claro
+que debe calcularse la suma acumulativa [1,X] y [1,Y]. Similar a
+la actualización, la próxima celda a ser acumulada en la suma
+puede obtenerse sustrayendo al valor del índice actual 2<sup>K</sup>
+(the lowest 1-bit). El caso unidimensional puede generalizarse a
+cualquier dimensión. Los &nbsp;árboles son colocados usando la
+misma lógica formando un &nbsp;árbol de &nbsp;árboles.</p>
+
+<p>Por ejemplo, veamos el caso en 2-D (tabla de tamaño NxN), en
+la estructura del &nbsp;árbol, la celda con coordenadas (X,Y)
+contiene la suma de un &nbsp;área la cual es determinada por el
+número de ceros en la representación binaria de X en la
+X-dirección y respectivamente el número de ceros en la
+representación de Y en la Y-dirección. La estructura puede
+entonces soportar averiguaciones de la suma de los valores en el
+rectángulo [1,X]x[1,Y] en un tiempo de O((log N)<sup>2</sup>).
+El cálculo de la suma de un &nbsp;área rectangular puede ser
+expresada en los términos:</p>
+
+<p>S([L,R]x[B,T])=S([1,R]x[1,T])-S([1,L-1]x[1,T])-S([1,R]x[1,B-1])
++ S([1,L-1]x[1,B-1]).</p>
+
+<p><img src="file:///H|/USERS/hERCLINe/TAU/CONC/conc1/INV/ABI/Dibujo.gif" width="366" height="150"></p>
+
+<p><b>Fig. </b>Ilustración del área almacenada en diferentes
+celdas para el caso de una tabla bidimensional (en negro la celda
+que almacena el área pintada con gris)<b><br>
+</b></p>
+
+<p>Para el caso P-dimensional con esta estructura puede
+determinarse la suma acumulativa de un intervalo P-dimensional en
+O((log N)<sup>P</sup>) operaciones.</p>
+
+<ul>
+    <li><b>Referencias:</b></li>
+</ul>
+
+<p>[1] IOI'01 Competition Tampere Finland.</p>
+
+<p>[2] P. M. Fenwick, &quot;A new data structure for cumulative
+frequency tables&quot;, Software-Practice and Experience, vol.
+24, no. 3, pp. 327-336, 1994.</p>
+
+<hr size="1" align="right">
+
+<ul>
+    <li><b>Ejemplos:</b></li>
+</ul>
+
+<pre><b>const<br> </b> maxSize = 1 <b>shl</b> 10; </pre>
+<pre><b>var</b> <br>  ABI : <b>array</b>[1..maxSize] of longint; <br>  N : integer; </pre>
+<pre><b>function</b> LOW_BIT (i : integer) : integer;<br><b>begin</b> <br>  LOW_BIT := i <b>and</b> (i <b>xor</b> (i-1))<br><b>end</b>;
+
+<b>procedure</b> Update (i : integer; amount : longint);<br><b>begin</b><br>  <b>while</b> i &lt;= N <b>do</b> <br>  <b>begin</b><br>   inc(ABI[i], amount);<br>		inc(i, LOW_BIT(i))    <br>  <b>end</b>;   <br><b>end</b>;<br><br><b>function </b>Sum (x,y : integer) : longint; <b><br>var</b><br>  s,m : longint; <br>  i : integer; <b><br>begin</b> <br>  s := 0; m := 0; i := x-1; <br>  <b>while</b> i &gt; 0 do <br>  <b>begin</b> <br>   inc(s, ABI[i]);     <br>   dec(i, LOW_BIT(i));    <br><b>  end</b>;   <br>  i := y; <br>  <b>while</b> i &gt; 0 <b>do</b> <b><br>  begin</b>   <br>   inc(m, ABI[i]);<br>   dec(i, LOW_BIT(i));<b>
+  end</b>;<br>  Sum := M-S <br><b>end</b>;<br><br> - Ejemplo de implementación para una tabla 2-D (NxN). <b><br><br>const</b> <br>  maxSize = 64; </pre>
+<pre><b>var</b> <br>  ABI : <b>array</b>[1..maxSize,1..maxSize] of longint;<br>  N : integer; </pre>
+<pre><b>function</b> LOW_BIT (i : integer) : integer; <b><br>begin</b> <br> LOW_BIT := i <b>and</b> (i <b>xor</b> (i-1)) <br><b>end</b>;<br><br><b>procedure</b> update (x,y : integer; amount : integer) ; <b><br>var</b> <br>  ix : integer; <br><b>begin</b> <br>  <b>while </b>y &lt;= N <b>do</b>   <br>  <b>begin</b>   <br>   ix := x; <br>   w<b>hile</b> ix &lt;= N<b> do<br>   b</b><b>egin</b>       <br>    inc(ABI[y,ix], amount);<br>    inc(ix, LOW_BIT(ix))       <b><br>   end</b>;<br>   inc(y, LOW_BIT(y))     <br><b>  end</b>   <br><b>end</b>;<br><br><b>function</b> sum0 (x,y : integer) : longint;<br><b>var</b> <br>  ix : integer;   res : longint; 
+<b>begin</b> 
+  res := 0; <b>
+  while</b> y &gt; 0 <b>do</b> <b>
+  begin</b> 
+   ix := x;  
+   <b>while </b>ix &gt; 0 <b>do</b>   <b>
+   begin</b>     
+     inc(res, ABI[y,ix]); 
+     dec(ix, LOW_BIT(ix))     <b>
+   end</b>;   
+   dec(y, LOW_BIT(y))   <b>
+  end</b>; 
+  sum0 := res <b>
+end</b>;
+
+<b>function</b> sum (x1,y1, x2,y2 : integer) : longint; <b>
+begin</b> 
+ sum := sum0(x2,y2)-sum0(x2,y1-1)-sum0(x1-1,y2)+sum0(x1-1,y1-1) <b>
+end</b>; &nbsp; </pre>
+<hr>
+<em>Centro de Entrenamiento Nacional, Marzo 2002 </em> 
+</body>
+</html>

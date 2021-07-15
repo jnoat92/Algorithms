@@ -1,0 +1,515 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data
+href="Longest%20Common%20Subsequence%20(LCS)-1_archivos/editdata.mso">
+<title>DISTRIBUCIÓN DE INVERSIONES</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PersonName"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Lcardona</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Lcardona</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:Created>2006-11-02T09:35:00Z</o:Created>
+  <o:LastSaved>2006-11-02T09:37:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1001</o:Words>
+  <o:Characters>5511</o:Characters>
+  <o:Company>MINED</o:Company>
+  <o:Lines>45</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>6500</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabla normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white background="../NOTEBOOK.JPG" lang=ES style='tab-interval:
+35.4pt'>
+
+<div class=Section1>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p align=center><img width=143 height=96
+id="_x0000_i1025" src="../ENT_CON_INF.jpg" border=0></p>
+
+<p align=center><span class=SpellE>
+<span
+style='mso-bookmark:"3\._Longest_Common_Subsequence_\(LCS\)"'><b><u>
+<span
+style='font-size:18.0pt;font-family:Verdana;color:navy'>Longest</span></u></b></span></span><span
+style='mso-bookmark:"3\._Longest_Common_Subsequence_\(LCS\)"'><b><u><span
+style='font-size:18.0pt;font-family:Verdana;color:navy'> <span class=SpellE>Common</span>
+<span class=SpellE>Subsequence</span> (LCS)</span></u></b></span></p>
+
+<p align=center><b><span style='font-size:18.0pt;
+font-family:Verdana;color:navy'>Subsecuencia común más larga</span></b></p>
+
+<p style='margin-top:5.0pt;margin-right:7.5pt;margin-bottom:5.0pt;margin-left:
+7.5pt' align="justify"><b><u><span style='font-size:10.0pt;font-family:Verdana'>Entrada</span></u></b><span
+style='font-size:10.0pt;font-family:Verdana'>: Dos secuencias<br>
+<b><u>Salida</u></b>: la más larga secuencia de estas dos secuencias, vea <span
+class=GramE>los detalle</span> debajo</span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><span style='font-size:10.0pt;font-family:
+Verdana'>Una secuencia Z&nbsp; es una<b> <span class=SpellE>sub</span>-secuencia</b>
+de X &lt; x<sub>1</sub>, x<sub>2</sub>,...<span class=GramE>,<span
+class=SpellE>x<sub>m</sub></span></span>&gt;, si allí existe estrictamente una
+secuencia incrementada &lt;i<sub>1</sub>,i<sub>2</sub>,...,<span class=SpellE>i<sub>k</sub></span>&gt;
+de índice de X tal que para todo j = 1,2,..,k, notros tenemos que <span
+class=SpellE>x<sub>i</sub></span>=<span class=SpellE>z<sub>j</sub></span>. <span
+class=GramE>ejemplo</span>: X=&lt;<span class=SpellE>B,C,A,D</span>&gt; y
+Z=&lt;<span class=SpellE>C,A</span>&gt;.</span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><span style='font-size:10.0pt;font-family:
+Verdana'>Una secuencia Z es llamada <b>&nbsp;<span class=SpellE>sub</span>-secuencia</b>
+<b>común </b>de las secuencias X e Y si Z es <span class=SpellE>sub</span>-secuencia
+de ambas X y <span class=SpellE>Y</span>.</span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><span class=SpellE><span class=GramE><span
+style='font-size:10.0pt;font-family:Verdana'>longest</span></span></span><span
+style='font-size:10.0pt;font-family:Verdana'> <span class=SpellE>common</span> <span
+class=SpellE>subsequence</span> (<b>LCS</b>) es justamente la más grande
+&quot;común <span class=SpellE>sub</span>-secuencia&quot; de dos secuencias.</span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><span style='font-size:10.0pt;font-family:
+Verdana'>Un acercamiento de fuerza bruta de encontrar <b>LCS</b> como enumerar
+todo la <span class=SpellE>sub</span>-secuencia y encontrar el común más largo
+toma demasiado tiempo. Sin embargo, Científico de <st1:PersonName
+ProductID="la Computadora" w:st="on">la Computadora</st1:PersonName> ha
+encontrado una solución de <st1:PersonName ProductID="la Programación Dinámica"
+w:st="on">la Programación Dinámica</st1:PersonName> para el problema de <b>LCS</b>.
+Para los detalles, usted puede referirse a <st1:PersonName
+ProductID="la Introducción" w:st="on">la Introducción</st1:PersonName> al
+Algoritmo capítulo 16 (<st1:PersonName ProductID="la Programación Dinámica"
+w:st="on">la Programación Dinámica</st1:PersonName>), yo escribiré sólo el
+código final aquí, escrito en C, prepare para usar. Nota que este código se
+modifica ligeramente y yo uso las variables globales (sí éste no es Objeto
+Orientado)...</span><o:p></o:p></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><MAX;  printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z));  this normally will be the fastest * memo[z]="0;" for (z="0;" z><MAX; z++)  printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } ><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>&lt; p&gt;<b><span style='color:
+maroon'> Implementación en C</span></b><o:p></o:p></span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";mso-ansi-language:EN-GB'>// justamente copie &amp;
+pegue este código y pruébelo usted mismo<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+<br>
+// cambia esta constante&nbsp; si tienes una secuencia más grande<br>
+#define MAX 100<br>
+<br>
+char X[MAX],Y[MAX];<br>
+int i,j,m,n,c[MAX][MAX],b[MAX][MAX];<br>
+<br>
+int LCSlength() {<br>
+&nbsp; m=strlen(X);<br>
+&nbsp; n=strlen(Y);<br>
+<br>
+&nbsp; for (i=1;i&lt;=m;i++) c[i][0]=0;<br>
+&nbsp; for (j=0;j&lt;=n;j++) c[0][j]=0;<br>
+<br>
+&nbsp; for (i=1;i&lt;=m;i++)<br>
+&nbsp;&nbsp;&nbsp; for (j=1;j&lt;=n;j++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (X[i-1]==Y[j-1]) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i][j]=c[i-1][j-1]+1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[i][j]=1; /* from north west */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (c[i-1][j]&gt;=c[i][j-1]) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i][j]=c[i-1][j];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[i][j]=2; /* from north */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i][j]=c[i][j-1];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[i][j]=3; /* from west */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp; return c[m][n];<br>
+}<br>
+<br>
+void printLCS(int i,int j) {<br>
+&nbsp; if (i==0 || j==0) return;<br>
+<br>
+&nbsp; if (b[i][j]==1) {<br>
+&nbsp;&nbsp;&nbsp; printLCS(i-1,j-1);<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;%c&quot;,X[i-1]);<br>
+&nbsp; }<br>
+&nbsp; else if (b[i][j]==2)<br>
+&nbsp;&nbsp;&nbsp; printLCS(i-1,j);<br>
+&nbsp; else<br>
+&nbsp;&nbsp;&nbsp; printLCS(i,j-1);<br>
+}</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";mso-ansi-language:EN-GB'>void main() {<br>
+&nbsp; while (1) {<br>
+&nbsp;&nbsp;&nbsp; gets(X);<br>
+&nbsp;&nbsp;&nbsp; if (feof(stdin)) break; /* press ctrl+z to terminate */<br>
+&nbsp;&nbsp;&nbsp; gets(Y);<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;LCS length -&gt; %d\n&quot;,LCSlength()); /*
+count length */<br>
+&nbsp;&nbsp;&nbsp; printLCS(m,n); /* reconstruct LCS */<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;\n&quot;);<br>
+&nbsp; }<br>
+}</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><b><span style='color:maroon'>Implementación
+en Pascal</span></b></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><b><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";color:blue;mso-ansi-language:EN-GB'>Function</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";mso-ansi-language:
+EN-GB'> Solve : integer;<br>
+<span style='color:blue'>var</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; i, j : integer;<br>
+<span style='color:blue'>begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; m := length (s1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp; n := length (s2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp; fillchar (c, sizeof (c), 0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>for</span> i := 1 <span
+style='color:blue'>to</span> m <span style='color:blue'>do</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>for</span> j := 1
+<span style='color:blue'>to</span> n <span style='color:blue'>do</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>if</span>
+(s1[i-1] = s2[j-1]) <span style='color:blue'>then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i][j]
+:= c[i-1][j-1] + 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+b[i][j] := 1; (* desde noreste *)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>end</span>
+<span style='color:blue'>else</span> <span style='color:blue'>if</span>
+(c[i-1][j] &gt;= c[i][j-1]) <span style='color:blue'>then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i][j] :=
+c[i-1][j];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[i][j] :=
+2; (* desde norte *)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>end
+else begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i][j] :=
+c[i][j-1];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[i][j] :=
+3; {/* desde oeste */}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>end</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Solve := c[m][n];<br>
+<span style='color:blue'>end</span>;<br>
+<br>
+<span style='color:blue'>Procedure</span> </span><MAX;  printf(?%d-?,Non_DP(z)); much faster than first printf(?%d-?,DP_Top_Down(z));  this normally will be the fastest * memo[z]="0;" for (z="0;" z><MAX; z++)  printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } >
+<span
+lang=EN-GB style='mso-ansi-language:EN-GB'>&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";mso-ansi-language:
+EN-GB'>printLCS1 (i, j : integer); {<font color="#800000">ITERATIVA</font>}<br>
+var<br>
+&nbsp;&nbsp; s3 : string;<br>
+begin<br>
+&nbsp;&nbsp;&nbsp; s3 := '';<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>while</span> b[i, j] &lt;&gt; 0 <span
+style='color:blue'>do</span><br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>case</span> b[i,
+j] <span style='color:blue'>of</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 : i := i - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 : j := j - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 : <span style='color:blue'>begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+i := i - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+j := j - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+s3 := s1[i] + s3;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+style='color:blue'>end</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>end</span>;<br>
+&nbsp;&nbsp; <span style='color:blue'>end</span>;<br>
+&nbsp; <span style='color:blue'>writeln</span>(f, s3);<br>
+<span style='color:blue'>end</span>;<br>
+<br>
+<br>
+<span style='color:blue'>Procedure</span> </span><MAX; printf(?%d-?,Non_DP(z)); much faster than first  printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest * memo[z]="0;"  for (z="0;" z><MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } ><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";mso-ansi-language:
+EN-GB'>printLCS (i, j : integer);&nbsp;&nbsp; {<font color="#800000">RECURSIVA</font>}<br>
+<span style='color:blue'>begin</span><br>
+&nbsp;&nbsp; <span style='color:blue'>if</span> (i = 0) <span style='color:
+blue'>and</span> (j = 0) <span style='color:blue'>then</span> exit;<br>
+&nbsp;&nbsp; if (b[i][j] = 1) <span style='color:blue'>then</span><br>
+&nbsp;&nbsp; <span style='color:blue'>begin</span><br>
+&nbsp;&nbsp;&nbsp; </span><MAX; printf(?%d-?,Non_DP(z)); much faster  than first printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest *  memo[z]="0;" for (z="0;" z><MAX; z++) printf(?%d-?,DP_Bottom_Up(z));  printf(?\n\n?); } ><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";mso-ansi-language:
+EN-GB'>printLCS(i-1,j-1);<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>Write</span>(f, s1[i - 1]);<br>
+&nbsp; <span style='color:blue'>end else if</span> (b[i][j] = 2)<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>then</span> </span><MAX; printf(?%d-?,Non_DP(z)); much faster than  first printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest *  memo[z]="0;" for (z="0;" z><MAX; z++) printf(?%d-?,DP_Bottom_Up(z));  printf(?\n\n?); } ><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";mso-ansi-language:
+EN-GB'>printLCS(i - 1, j)<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>else</span> </span><MAX; printf(?%d-?,Non_DP(z)); much faster than first  printf(?%d-?,DP_Top_Down(z)); this normally will be the fastest * memo[z]="0;"  for (z="0;" z><MAX; z++) printf(?%d-?,DP_Bottom_Up(z)); printf(?\n\n?); } >
+<span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";mso-ansi-language:
+EN-GB'>printLCS(i, j - 1);<br>
+<span style='color:blue'>end</span>;</span></b><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><b><u><span style='font-size:10.0pt;
+font-family:Verdana'>Pregunta</span></u></b><span style='font-size:10.0pt;
+font-family:Verdana'>: Puedo listar todas las LCS posibles<span class=GramE>?</span><br>
+<b><u>Respuesta</u></b>: Modifique <span class=SpellE><span class=GramE>printLCS</span></span><span
+class=GramE>(</span>), los detalles serán mostrados después</span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'>&nbsp;</p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><b><span lang=EN-GB style='font-size:10.0pt;
+font-family:Arial;mso-ansi-language:EN-GB'>&#9632;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:Verdana;mso-ansi-language:EN-GB'>
+Otra implementación</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p align=center style='margin:5.0pt 7.5pt; text-align:justify'><b><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";mso-ansi-language:EN-GB'>{Este programa encuentra la
+m&nbsp;xima subsecuencia común entre dos cadenas y<br>
+da su longitud}<br>
+<font color="#0000FF">const</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp; up = '^';<br>
+&nbsp;&nbsp; left = '&lt;';<br>
+&nbsp; diago = '+';<br>
+&nbsp;&nbsp;&nbsp;&nbsp; cc = 100;<br>
+<font color="#0000FF">type</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z = array[0..cc, 0..cc] of byte;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; z1 = array[0..cc, 0..cc] of char;<br>
+&nbsp;&nbsp; tipo = z;<br>
+&nbsp; tipo1 = z1;<br>
+<font color="#0000FF">var</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f : text;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a : char;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; tab : tipo;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; dde : tipo1;<br>
+&nbsp;&nbsp;&nbsp; i, j : byte;<br>
+&nbsp; s1, s2 : string;<br>
+<br>
+<font color="#0000FF">procedure</font> read_;<br>
+<font color="#0000FF">var</font><br>
+&nbsp;&nbsp; max : byte;<br>
+<font color="#0000FF">begin</font><br>
+&nbsp; fillchar(tab, sizeof(tab), 0);<br>
+&nbsp; fillchar(dde, sizeof(dde), 0);<br>
+&nbsp; assign(f, 'LCS.IN'); <font color="#0000FF">reset</font>(f);<br>
+&nbsp; <font color="#0000FF">readln</font>(f, s1);<br>
+&nbsp; <font color="#0000FF">read</font>(f, s2);<br>
+&nbsp; close(f);<br>
+<font color="#0000FF">end</font>;{read_}<br>
+<br>
+<font color="#0000FF">procedure</font> lcs;<br>
+<font color="#0000FF">begin</font><br>
+&nbsp;&nbsp; <font color="#0000FF">for</font> i := 1 <font color="#0000FF">to ord</font>(s2[0]) 
+<font color="#0000FF">do</font><br>
+&nbsp;&nbsp; <font color="#0000FF">begin</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">for</font> j := 1 
+<font color="#0000FF">to ord(</font>s1[0]) <font color="#0000FF">do</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">begin</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">if</font> s2[i] = s1[j]
+<font color="#0000FF">then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">begin</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tab[i, j] := tab[i - 1,
+j - 1] + 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dde[i, j] := diago;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if</font> tab[i - 1, j] &gt;= tab[i, j
+- 1] <font color="#0000FF">then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"> begin</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tab[i, j] := tab[i - 1,
+j];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dde[i, j] := up;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; begin</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tab[i, j] := tab[i, j - 1];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dde[i, j] := left;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">end</font>;<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">end</font>;<br>
+&nbsp; <font color="#0000FF">end</font>;<br>
+<font color="#0000FF">end</font>;{lms}<br>
+<br>
+<font color="#0000FF">procedure</font> write_;<br>
+<font color="#0000FF">var</font><br>
+&nbsp;&nbsp; s3 : string;<br>
+<font color="#0000FF">begin</font><br>
+&nbsp;&nbsp; assign(f, 'LCS.out'); <font color="#0000FF">rewrite</font>(f);<br>
+&nbsp;&nbsp; <font color="#0000FF">writeln</font>(f, tab[ord(s1[0]), ord(s2[0])]);<br>
+&nbsp;&nbsp; i := ord(s2[0]); j := ord(s1[0]); s3 := '';<br>
+&nbsp;&nbsp; <font color="#0000FF">while</font> dde[i, j] &lt;&gt; #0 
+<font color="#0000FF">do begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp; case </font>dde[i, j] <font color="#0000FF">of</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; up : i := i - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; left : j := j - 1;<br>
+&nbsp;&nbsp;&nbsp; diago : <font color="#0000FF">begin</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+i := i - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+j := j - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s3 :=
+s1[i] + s3;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">end</font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">end</font>;<br>
+&nbsp;&nbsp; <font color="#0000FF">end</font>;<br>
+&nbsp;&nbsp; <font color="#0000FF">write</font>(f, s3);<br>
+&nbsp;&nbsp; close(f);<br>
+<font color="#0000FF">end</font>;{write}<br>
+<br>
+<font color="#0000FF">begin</font><br>
+&nbsp; read_;<br>
+&nbsp; lcs;<br>
+&nbsp; write_;<br>
+<font color="#0000FF">end</font>.<br>
+<br>
+<br>
+<br>
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>Secuencia
+Común <span class=GramE>mas</span> Larga (LCS)</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'><br>
+<br>
+Dados dos secuencias de caracteres, imprima la longitud de la secuencia común
+mas larga de cada secuencia. Por ejemplo la secuencia común <span class=GramE>mas</span>
+larga de las siguientes dos secuencias:<br>
+<br>
+<span class=SpellE>abcdgh</span><br>
+<span class=SpellE>aedfhr</span><br>
+es <span class=SpellE>adh</span> de longitud 3.<br>
+<br>
+<b>Entrada</b><br>
+<br>
+La entrada consiste de un par de líneas. La primera línea contiene una cadena y
+la segunda línea la otra cadena. Cada cadena y no tiene mas de 1000 caracteres <br>
+<br>
+<b>Salida</b><br>
+<br>
+La salida contiene una línea con el número indicando la longitud de la
+secuencia mas larga encontrada.<br>
+<br>
+<b>Ejemplo de Entrada y Salida </b><br>
+<br>
+<span class=SpellE><b>LCS.IN</b></span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE>LCS.OUT</span><br>
+</b><br>
+a1b2c3d4e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4<br>
+zz1yy2xx3ww4vv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1234<br>
+<br>
+<span class=SpellE><b>LCS.IN</b></span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE>LCS.OUT</span><br>
+</b><br>
+<span class=SpellE>abcdgh</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3<br>
+<span class=SpellE>aedfhr</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE>adh</span><br>
+<br>
+<span class=SpellE><b>LCS.IN</b></span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE>LCS.OUT</span><br>
+</b><br>
+<span class=SpellE>abcdefghijklmnopqrstuvwxyz</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+26<br>
+a0b0c0d0e0f0g0h0i0j0k0l0m0n0o0p0q0r0s0t0u0v0w0x0y0z0<br>
+<br>
+<span class=SpellE><b>LCS.IN</b></span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE>LCS.OUT</span><br>
+</b><br>
+<span class=SpellE>abcdefghijklmnzyxwvutsrqpo</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+14<br>
+<span class=SpellE>opqrstuvwxyzabcdefghijklmn</span><br>
+<br>
+&nbsp;</span></p>
+
+</blockquote>
+
+</div>
+
+</body>
+
+</html>
